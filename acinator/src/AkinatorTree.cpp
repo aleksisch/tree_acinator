@@ -3,16 +3,28 @@
 AkinatorTree::AkinatorTree()
 {
     head_node = new NodeTree;
+    strcpy(head_node->data, "Akinator");
 
-    strcpy(head_node->data, "Let's start?");
-
-    head_node->right_child = AkinatorTree::CreateNode("Die");
-    head_node->left_child = AkinatorTree::CreateNode("Akinator");
 }
 
 AkinatorTree::~AkinatorTree()
 {
-    //dtor
+    FreeTree(head_node);
+}
+
+int AkinatorTree::FreeTree(NodeTree* current)
+{
+
+    if (current == nullptr)
+        current = head_node;
+
+    if (current->left_child != nullptr)
+        FreeTree(current->left_child);
+
+    if (current->right_child != nullptr)
+        FreeTree(current->right_child);
+
+    delete current;
 }
 
 NodeTree* AkinatorTree::CreateNode(char* value)
@@ -60,11 +72,12 @@ int AkinatorTree::play(NodeTree* current)
             fgets(ans, STR_LENGTH, stdin);
             ans[strlen(ans) - 1] = '\0';
 
-            printf("Enter differences answer, yes mean my object, no mean your's\n");
+            printf("Enter differences answer, no mean my object, yes mean your's\n");
 
             fgets(new_q, STR_LENGTH, stdin);
+            new_q[strlen(new_q) - 1] = '\0';
 
-            AkinatorTree::FillAnswer(current, current->data, ans, new_q);
+            AkinatorTree::FillAnswer(current, ans, current->data, new_q);
         }
     }
     else
@@ -134,5 +147,37 @@ int AkinatorTree::ReadGraphFile(char* file_name)
         }
         else ch++;
     }
+
+}
+
+int AkinatorTree::WriteDump(FILE* file, NodeTree* current)
+{
+    if (current == nullptr)
+        current = head_node;
+
+    if (current->left_child != nullptr)
+    {
+        fprintf(file, "\"%s\"->\"%s\"\n", current->data, current->left_child->data);
+        WriteDump(file, current->left_child);
+    }
+
+    if (current->right_child != nullptr)
+    {
+        fprintf(file, "\"%s\"->\"%s\"\n", current->data, current->right_child->data);
+        WriteDump(file, current->right_child);
+    }
+}
+
+int AkinatorTree::GraphDump()
+{
+    FILE* file_graph = fopen("./graphviz/tmp_dump.dt", "w");
+    fprintf(file_graph, "digraph G{ ");
+
+    WriteDump(file_graph);
+
+    fprintf(file_graph, "}");
+
+    fclose(file_graph);
+    system("cd/d ./graphviz/ && dot.exe -Tjpg -O tmp_dump.dt");
 
 }

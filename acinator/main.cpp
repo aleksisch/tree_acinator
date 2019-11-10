@@ -6,7 +6,9 @@ using namespace std;
 int main()
 {
     AkinatorTree akinator;
-    while(true)
+    int i = 4;
+    while(i--)
         akinator.play();
+    akinator.GraphDump();
     system("pause");
 }

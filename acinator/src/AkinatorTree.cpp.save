@@ -4,7 +4,7 @@ AkinatorTree::AkinatorTree()
 {
     head_node = new NodeTree;
 
-    strcpy(head_node->data, "Let's start?");
+    strcpy(head_node->data, "Akinator?");
 
     head_node->right_child = AkinatorTree::CreateNode("Die");
     head_node->left_child = AkinatorTree::CreateNode("Akinator");
@@ -45,26 +45,36 @@ int AkinatorTree::play(NodeTree* current)
         char answer[STR_LENGTH] = {0};
 
         fgets(answer, STR_LENGTH, stdin);
-        printf(" first%send\n", answer);
+        answer[strlen(answer) - 1] = '\0';
+
         if (answer[0] == 'y' || answer[0] == 'Y')
             printf("haha\n");
 
         else
         {
+            printf("Hmm, enter what about you think:\n");
+
             char ans[STR_LENGTH] = {};
+            char new_q[STR_LENGTH] = {};
 
             fgets(ans, STR_LENGTH, stdin);
-        
+            ans[strlen(ans) - 1] = '\0';
+
+            printf("Enter differences answer, yes mean my object, no mean your's\n");
+
             fgets(new_q, STR_LENGTH, stdin);
-            
+
             AkinatorTree::FillAnswer(current, current->data, ans, new_q);
         }
     }
     else
     {
+        printf("%s\n", current->data);
         char answer[STR_LENGTH] = {0};
+
         fgets(answer, STR_LENGTH, stdin);
-        
+        answer[strlen(answer) - 1] = '\0';
+
         if (answer[0] == 'y' || answer[0] == 'Y')
             AkinatorTree::play(current->left_child);
         else
@@ -124,5 +134,37 @@ int AkinatorTree::ReadGraphFile(char* file_name)
         }
         else ch++;
     }
+
+}
+
+int AkinatorTree::WriteDump(FILE* file, NodeTree* current)
+{
+    if (current == nullptr)
+        current = head_node;
+
+    if (current->left_child != nullptr)
+    {
+        fprintf(file, "\"%s\"->\"%s\"\n", current->data, current->left_child->data);
+        WriteDump(file, current->left_child);
+    }
+
+    if (current->right_child != nullptr)
+    {
+        fprintf(file, "\"%s\"->\"%s\"\n", current->data, current->right_child->data);
+        WriteDump(file, current->right_child);
+    }
+}
+
+int AkinatorTree::GraphDump()
+{
+    FILE* file_graph = fopen("./graphviz/tmp_dump.dt", "w");
+    fprintf(file_graph, "digraph G{ ");
+
+    WriteDump(file_graph);
+
+    fprintf(file_graph, "}");
+
+    fclose(file_graph);
+    system("cd/d ./graphviz/ && dot.exe -Tjpg -O tmp_dump.dt");
 
 }

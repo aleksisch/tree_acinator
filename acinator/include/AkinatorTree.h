@@ -24,15 +24,16 @@ class AkinatorTree
         ~AkinatorTree();
         int play(NodeTree* current = nullptr);
         int ReadGraphFile(char* file_name);
+        int GraphDump();
     protected:
 
     private:
         NodeTree* CreateNode(char* data);
-        int FillAnswer(NodeTree* cur_node, char* left, char* right, char* question);
         NodeTree* head_node;
 
+        int FillAnswer(NodeTree* cur_node, char* left, char* right, char* question);
+        int WriteDump(FILE* file, NodeTree* current = nullptr);
+        int FreeTree(NodeTree* current);
 };
-
-bool IsEnterYes(char* str);
 
 #endif // AKINATORTREE_H

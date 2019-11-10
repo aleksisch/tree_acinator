@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>to_test build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>09-11-2019 at 22:09.02</u><br />
+Build ended on: <u>09-11-2019 at 22:09.07</u><p />
+<b>-------------- Build: Debug in to_test (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+g++.exe -Wall -fexceptions -g -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC  -c D:\c+\list\to_test\main.cpp -o obj\Debug\main.o<br />
+D:\c+\list\to_test\main.cpp: In static member function 'static HashFunction FixedSet::FindHash(const std::vector&lt;int&gt;&amp;, std::mt19937_64&amp;)':<br />
+<font color="#0000ff">D:\c+\list\to_test\main.cpp:137:12: warning: unused variable 'num_buckets' [-Wunused-variable]</font><br />
+     size_t num_buckets = numbers.size();<br />
+            ^~~~~~~~~~~<br />
+<font color="#0000ff">D:\c+\list\to_test\main.cpp: In instantiation of 'void std::_Construct(_T1*, _Args&amp;&amp; ...) [with _T1 = Bucket; _Args = {}]':</font><br />
+<font color="#0000ff">c:\mingw\include\c++\8.2.0\bits\stl_uninitialized.h:527:18:   required from 'static _ForwardIterator std::__uninitialized_default_n_1&lt;_TrivialValueType&gt;::__uninit_default_n(_ForwardIterator, _Size) [with _ForwardIterator = Bucket*; _Size = long long unsigned int; bool _TrivialValueType = false]'</font><br />
+<font color="#0000ff">c:\mingw\include\c++\8.2.0\bits\stl_uninitialized.h:583:20:   required from '_ForwardIterator std::__uninitialized_default_n(_ForwardIterator, _Size) [with _ForwardIterator = Bucket*; _Size = long long unsigned int]'</font><br />
+<font color="#0000ff">c:\mingw\include\c++\8.2.0\bits\stl_uninitialized.h:645:44:   required from '_ForwardIterator std::__uninitialized_default_n_a(_ForwardIterator, _Size, std::allocator&lt;_Tp&gt;&amp;) [with _ForwardIterator = Bucket*; _Size = long long unsigned int; _Tp = Bucket]'</font><br />
+<font color="#0000ff">c:\mingw\include\c++\8.2.0\bits\stl_vector.h:1490:36:   required from 'void std::vector&lt;_Tp, _Alloc&gt;::_M_default_initialize(std::vector&lt;_Tp, _Alloc&gt;::size_type) [with _Tp = Bucket; _Alloc = std::allocator&lt;Bucket&gt;; std::vector&lt;_Tp, _Alloc&gt;::size_type = long long unsigned int]'</font><br />
+<font color="#0000ff">c:\mingw\include\c++\8.2.0\bits\stl_vector.h:417:9:   required from 'std::vector&lt;_Tp, _Alloc&gt;::vector(std::vector&lt;_Tp, _Alloc&gt;::size_type, const allocator_type&amp;) [with _Tp = Bucket; _Alloc = std::allocator&lt;Bucket&gt;; std::vector&lt;_Tp, _Alloc&gt;::size_type = long long unsigned int; std::vector&lt;_Tp, _Alloc&gt;::allocator_type = std::allocator&lt;Bucket&gt;]'</font><br />
+<font color="#0000ff">D:\c+\list\to_test\main.cpp:154:47:   required from here</font><br />
+<font color="#0000ff">D:\c+\list\to_test\main.cpp:21:7: warning: 'Bucket::hash_' should be initialized in the member initialization list [-Weffc++]</font><br />
+ class Bucket {<br />
+       ^~~~~~<br />
+<font color="#0000ff">D:\c+\list\to_test\main.cpp:21:7: warning: 'Bucket::data_' should be initialized in the member initialization list [-Weffc++]</font><br />
+In file included from c:\mingw\include\c++\8.2.0\vector:62,<br />
+                 from D:\c+\list\to_test\main.cpp:2:<br />
+c:\mingw\include\c++\8.2.0\bits\stl_construct.h:75:7: note: synthesized method 'Bucket::Bucket()' first required here<br />
+     { ::new(static_cast&lt;void*&gt;(__p)) _T1(std::forward&lt;_Args&gt;(__args)...); }<br />
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
+g++.exe  -o bin\Debug\to_test.exe obj\Debug\main.o<br />
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/8.2.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o): in function "main':<br />
+<font color="#ff0000">C:\temp\gcc\build-mingw-w64\mingw-w64-crt/../../src/mingw-w64-crt/crt/crt0_c.c:18: undefined reference to "WinMain'</font><br />
+<font color="#ff0000">collect2.exe: error: ld returned 1 exit status</font><br />
+<font color="#a00000">Process terminated with status 1 (0 minute(s), 4 second(s))</font><br />
+<font color="#a00000">2 error(s), 10 warning(s) (0 minute(s), 4 second(s))</font><br />
+</tt>
+</body>
+</html>
