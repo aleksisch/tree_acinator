@@ -27,7 +27,7 @@ int AkinatorTree::FreeTree(NodeTree* current)
     delete current;
 }
 
-NodeTree* AkinatorTree::CreateNode(char* value)
+NodeTree* AkinatorTree::CreateNode(const char* value)
 {
     NodeTree* new_node = new NodeTree;
     strcpy(new_node->data, value);
@@ -124,30 +124,86 @@ char* ReadFile (const char* str, size_t *size, const char* chmod = "r")
     return text;
 }
 
-
-int AkinatorTree::ReadGraphFile(char* file_name)
+int AkinatorTree::FillGraph(NodeTree* current, char** ptr_on_text)
 {
-    size_t size = 0;
-    char* text = ReadFile(file_name, &size, "r");
+    printf("%s\n\n", *ptr_on_text);
 
-    for (size_t ch = 0; ch < size;)
+    char first_word[STR_LENGTH] = {};
+
+    int err = FirstWordFromText(ptr_on_text, first_word);
+
+    if (err == 0)
     {
-        if (text[ch] == '{')
+        current->left_child = CreateNode(first_word);
+
+        if ((*ptr_on_text)[0] == '{')
+            FillGraph(current->left_child, ptr_on_text);
+        else (*ptr_on_text)++;
+    }
+    char second_word[STR_LENGTH] = {};
+
+    err = FirstWordFromText(ptr_on_text, second_word);
+
+    if (err == 0)
+    {
+        current->right_child = CreateNode(second_word);
+
+        if ((*ptr_on_text)[0] == '{')
+            FillGraph(current->right_child, ptr_on_text);
+        else (*ptr_on_text)++;
+    }
+    (*ptr_on_text)++;
+    return err;
+}
+
+int FirstWordFromText(char** ptr_on_text, char* tmp_word)
+{
+    (*ptr_on_text)++;
+    int counter = 0;
+
+    while ((counter < STR_LENGTH) &&
+           ((*ptr_on_text))[0] != '{' &&
+           ((*ptr_on_text))[0] != '}')
         {
-            size_t start_data = ch;
-            char cur_question[STR_LENGTH] = {};
+            if ((*ptr_on_text)[0] != '\n')
+                tmp_word[counter++] = (*ptr_on_text)[0];
+            (*ptr_on_text)++;
 
-            while (text[++ch] != '{' && text[ch] != '}')
-            {
-                cur_question[ch - start_data - 1] = text[ch];
-            }
-
-
+            printf("in func %c %s\n", (*ptr_on_text)[0],  tmp_word);
 
         }
-        else ch++;
+
+    if (counter + 1 == STR_LENGTH)
+        return 2;
+
+    if (strcmp(tmp_word, "nil") == 0)
+    {
+        (*ptr_on_text)++;
+        return 1;
     }
 
+    return 0;
+}
+
+
+int AkinatorTree::ReadGraphFile(const char* file_name)
+{
+    size_t size = 0;
+
+    char* text = ReadFile(file_name, &size, "r");
+
+    char first_word[STR_LENGTH] = {};
+
+    FirstWordFromText(&text, first_word);
+
+    printf("data %s\n", first_word);
+
+    strcpy(head_node->data, first_word);
+
+    FillGraph(head_node, &text);
+
+    GraphDump();
+    return 0;
 }
 
 int AkinatorTree::WriteDump(FILE* file, NodeTree* current)

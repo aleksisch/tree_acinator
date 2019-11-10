@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1573403918 source:d:\c+\list\acinator\main.cpp
+1573410092 source:d:\c+\list\acinator\main.cpp
 	<iostream>
 	"./include/AkinatorTree.h"
 
-1573404876 source:d:\c+\list\acinator\src\akinatortree.cpp
+1573414381 source:d:\c+\list\acinator\src\akinatortree.cpp
 	"../include/AkinatorTree.h"
 
-1573404977 d:\c+\list\acinator\include\akinatortree.h
+1573410031 d:\c+\list\acinator\include\akinatortree.h
 	<string.h>
 	<stdio.h>
 	<stdlib.h>

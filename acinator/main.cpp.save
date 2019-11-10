@@ -1,9 +1,14 @@
 #include <iostream>
+#include "./include/AkinatorTree.h"
 
 using namespace std;
 
 int main()
 {
     AkinatorTree akinator;
-    akinator.play();
+    int i = 4;
+    while(i--)
+        akinator.play();
+    akinator.ReadGraphFile("graph.txt");
+    system("pause");
 }
