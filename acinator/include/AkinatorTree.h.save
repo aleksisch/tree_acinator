@@ -25,17 +25,20 @@ class AkinatorTree
         int play(NodeTree* current = nullptr);
         int ReadGraphFile(char* file_name);
         int GraphDump();
-        int AkinatorTree::ReadGraphFile(const char* file_name = "input.txt");
+        int ReadGraphFile(const char* input_file = "input.txt");
+
     protected:
 
     private:
         NodeTree* CreateNode(const char* data = "666");
         NodeTree* head_node;
 
-
+        int FillGraph(NodeTree* current, char** ptr_on_text);
         int FillAnswer(NodeTree* cur_node, char* left, char* right, char* question);
         int WriteDump(FILE* file, NodeTree* current = nullptr);
         int FreeTree(NodeTree* current);
 };
+
+int FirstWordFromText(char** ptr_on_text, char* word);
 
 #endif // AKINATORTREE_H

@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     AkinatorTree akinator;
-
-    akinator.ReadGraphFile("graph.txt");
+    akinator.ReadGraphFile();
+    akinator.WriteGraphFile();
     system("pause");
 }

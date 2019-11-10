@@ -1,0 +1,14 @@
+#ifndef CONSTANTS_H_INCLUDED
+#define CONSTANTS_H_INCLUDED
+
+const char* null_word = "nil";
+const char* 
+enum ReturnCode
+{
+    OK = 0,
+    NIL,
+    LONG_STRING,
+    
+};
+
+#endif // CONSTANTS_H_INCLUDED
