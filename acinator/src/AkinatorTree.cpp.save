@@ -2,9 +2,8 @@
 
 AkinatorTree::AkinatorTree()
 {
-    head_node = new NodeTree;
-    strcpy(head_node->data, "Akinator");
-
+    head_node = new TreeNode;
+    strcpy(head_node->data, "Akinator?");
 }
 
 AkinatorTree::~AkinatorTree()
@@ -12,7 +11,7 @@ AkinatorTree::~AkinatorTree()
     FreeTree(head_node);
 }
 
-int AkinatorTree::FreeTree(NodeTree* current)
+int AkinatorTree::FreeTree(TreeNode* current)
 {
 
     if (current == nullptr)
@@ -27,22 +26,101 @@ int AkinatorTree::FreeTree(NodeTree* current)
     delete current;
 }
 
-NodeTree* AkinatorTree::CreateNode(const char* value)
+int AkinatorTree::FillAnswer(TreeNode* cur_node, const char* left_value, const char* right_value, const char* question)
 {
-    NodeTree* new_node = new NodeTree;
-    strcpy(new_node->data, value);
-    return new_node;
-}
+    cur_node->left_child  = new TreeNode(left_value);
+    cur_node->right_child = new TreeNode(right_value);
 
-int AkinatorTree::FillAnswer(NodeTree* cur_node, char* left_value, char* right_value, char* question)
-{
-    cur_node->left_child = AkinatorTree::CreateNode(left_value);
-    cur_node->right_child = AkinatorTree::CreateNode(right_value);
     strcpy(cur_node->data, question);
+
     return 0;
 }
 
-int AkinatorTree::play(NodeTree* current)
+int AkinatorTree::CompareNode(const char* first_name, const char* second_name)
+{
+    Question* first_info = new Question[MAX_DEPTH];
+
+    GetNodeInfo(head_node, first_name, first_info);
+
+    Question* second_info = new Question[MAX_DEPTH];
+
+    GetNodeInfo(head_node, second_name, second_info);
+
+    int counter = 0;
+
+    printf("%s \n\n", second_info->question);
+    printf("%s \n\n", first_info->question);
+
+    while (strcmp(first_info->question,
+                  second_info->question) == 0 &&
+                  first_info->answer     ==
+                  second_info->answer)
+    {
+        printf("both object is %s %s\n", first_info->question, bool_to_str(first_info->answer));
+        first_info++;
+        second_info++;
+    }
+
+    printf("Differences:\n");
+
+    while (strcmp(first_info->question, first_name) != 0)
+    {
+        printf("first object is %s %s\n", first_info->question, bool_to_str(first_info->answer));
+        first_info++;
+    }
+
+    while (strcmp(first_info->question, second_name))
+    {
+        printf("second object is %s %s\n", second_info->question, bool_to_str((second_info++)->answer));
+        second_info++;
+    }
+
+}
+
+char* bool_to_str(bool a)
+{
+    if (a)
+        return "yes";
+
+    else
+        return "not";
+}
+
+int AkinatorTree::GetNodeInfo(TreeNode* current, const char* name, Question* arr_q, int counter)
+{
+    if (current == nullptr) ;
+
+    else if (strcmp(current->data, name) == 0)
+    {
+        strcpy(arr_q[counter].question, current->data);        
+        return OK;
+    }
+
+    else
+    {
+        strcpy(arr_q[counter].question, current->data);
+        printf("%s %d\n", arr_q[counter].question, counter);
+        int res = OK;
+
+        res = GetNodeInfo(current->left_child, name, arr_q, counter + 1);
+        if (res == OK)
+        {
+            arr_q[counter].answer = true;
+            return OK;
+        }
+
+        res = GetNodeInfo(current->right_child, name, arr_q, counter + 1);
+        if (res == OK)
+        {
+            arr_q[counter].answer = false;
+            return OK;
+        }
+    }
+
+    return NIL;
+}
+
+int AkinatorTree::play(TreeNode* current)
 {
     if (current == nullptr)
     {
@@ -82,7 +160,7 @@ int AkinatorTree::play(NodeTree* current)
     }
     else
     {
-        printf("%s or exit to go out\n", current->data);
+        printf("%s || write exit to go out\n", current->data);
         char answer[STR_LENGTH] = {0};
 
         fgets(answer, STR_LENGTH, stdin);
@@ -128,7 +206,7 @@ char* ReadFile (const char* str, size_t *size, const char* chmod = "r")
     return text;
 }
 
-int AkinatorTree::FillGraph(NodeTree* current, char** ptr_on_text)
+int AkinatorTree::FillGraph(TreeNode* current, char** ptr_on_text)
 {
     char first_word[STR_LENGTH] = {};
 
@@ -136,7 +214,7 @@ int AkinatorTree::FillGraph(NodeTree* current, char** ptr_on_text)
 
     if (err == 0)
     {
-        current->left_child = CreateNode(first_word);
+        current->left_child = new TreeNode(first_word);
 
         if ((*ptr_on_text)[0] == '{')
             err |= FillGraph(current->left_child, ptr_on_text);
@@ -148,7 +226,7 @@ int AkinatorTree::FillGraph(NodeTree* current, char** ptr_on_text)
 
     if (err == OK)
     {
-        current->right_child = CreateNode(second_word);
+        current->right_child = new TreeNode(second_word);
 
         if ((*ptr_on_text)[0] == '{')
             err |= FillGraph(current->right_child, ptr_on_text);
@@ -213,7 +291,7 @@ int AkinatorTree::ReadGraphFile(const char* input_file)
     return 0;
 }
 
-int AkinatorTree::NodeToFile(NodeTree* current_node, FILE* output_file)
+int AkinatorTree::NodeToFile(TreeNode* current_node, FILE* output_file)
 {
     if (current_node  == nullptr)
         fprintf(output_file, "{%s", null_word);
@@ -224,7 +302,7 @@ int AkinatorTree::NodeToFile(NodeTree* current_node, FILE* output_file)
     fprintf(output_file, "}");
 }
 
-int AkinatorTree::WriteGraph(NodeTree* current_node, FILE* output_file)
+int AkinatorTree::WriteGraph(TreeNode* current_node, FILE* output_file)
 {
     NodeToFile(current_node->left_child, output_file);
     NodeToFile(current_node->right_child, output_file);
@@ -241,7 +319,7 @@ int AkinatorTree::WriteGraphFile(const char* output_file)
     WriteGraph(head_node, graph_file);
 }
 
-int AkinatorTree::WriteDump(FILE* file, NodeTree* current)
+int AkinatorTree::WriteDump(FILE* file, TreeNode* current)
 {
     if (current == nullptr)
         current = head_node;
@@ -273,6 +351,7 @@ int AkinatorTree::GraphDump()
     sprintf(input_path, "%s%s", path_to_graphviz, output_graphviz);
 
     FILE* file_graph = fopen(input_path, "w");
+
     fprintf(file_graph, "digraph G{ \n");
 
     WriteDump(file_graph);
@@ -292,5 +371,4 @@ int AkinatorTree::GraphDump()
 int AkinatorTree::PrintError(int err_code, const char* function_name)
 {
     printf("Error occured in function %s code", function_name, err_code);
-
 }

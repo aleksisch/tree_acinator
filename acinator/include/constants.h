@@ -8,6 +8,7 @@ static const char* path_to_graphviz = "./graphviz/";
 static const char* output_graphviz = "tmp_dump.dt";
 
 static const int STR_LENGTH = 255;
+static const int MAX_DEPTH = 100;
 
 enum ReturnCode
 {

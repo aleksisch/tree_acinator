@@ -6,14 +6,24 @@
 #include <stdlib.h>
 #include "constants.h"
 
-struct NodeTree
+struct Question
+{
+    char question[STR_LENGTH] = {};
+    bool answer = false;
+};
+
+struct TreeNode
 {
     char data[STR_LENGTH] {};
-    NodeTree* left_child;
-    NodeTree* right_child;
-    NodeTree() :left_child(nullptr),
-                right_child(nullptr)
-                {}
+    TreeNode* left_child;
+    TreeNode* right_child;
+
+    TreeNode(const char* t_data = "666") :
+        left_child(nullptr),
+        right_child(nullptr)
+    {
+        strcpy(data, t_data);
+    }
 };
 
 class AkinatorTree
@@ -21,33 +31,41 @@ class AkinatorTree
     public:
         AkinatorTree();
         ~AkinatorTree();
-        int play(NodeTree* current = nullptr);
+
+        int play(TreeNode* current = nullptr);
 
         int GraphDump();
+
         int ReadGraphFile(const char* input_file = input_graph_file);
-
-
-        int WriteGraph(NodeTree* current_node, FILE* output_file);
 
         int WriteGraphFile(const char* output_file = output_graph_file);
 
+        int CompareNode(const char* first_name, const char* second_name);
+
+        int ObjectInfo(const char* name);
+
     private:
-        NodeTree* CreateNode(const char* data = "666");
-        NodeTree* head_node;
 
-        int NodeToFile(NodeTree* current_node, FILE* output_file);
+        TreeNode* head_node;
 
-        int FillGraph(NodeTree* current, char** ptr_on_text);
+        int NodeToFile(TreeNode* current_node, FILE* output_file);
 
-        int FillAnswer(NodeTree* cur_node, char* left, char* right, char* question);
+        int FillGraph(TreeNode* current, char** ptr_on_text);
 
-        int WriteDump(FILE* file, NodeTree* current = nullptr);
+        int FillAnswer(TreeNode* cur_node, const char* left, const char* right, const char* question);
 
-        int FreeTree(NodeTree* current);
+        int WriteDump(FILE* file, TreeNode* current = nullptr);
+
+        int FreeTree(TreeNode* current);
 
         int PrintError(int err_code, const char* function_name = "");
+
+        int GetNodeInfo(TreeNode* current, const char* name, Question* arr_q, int counter = 0);
+
+        int WriteGraph(TreeNode* current_node, FILE* output_file);
 };
 
 int FirstWordFromText(char** ptr_on_text, char* word);
+char* bool_to_str(bool a);
 
 #endif // AKINATORTREE_H
