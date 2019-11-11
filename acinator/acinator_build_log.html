@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>10-11-2019 at 23:09.37</u><br />
-Build ended on: <u>10-11-2019 at 23:09.39</u><p />
+Build started on: <u>11-11-2019 at 10:19.14</u><br />
+Build ended on: <u>11-11-2019 at 10:19.17</u><p />
 <b>-------------- Build: Debug in acinator (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
 g++.exe -Wall -fexceptions -g -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC  -c D:\c+\list\acinator\src\AkinatorTree.cpp -o obj\Debug\src\AkinatorTree.o<br />
 In file included from D:\c+\list\acinator\src\AkinatorTree.cpp:1:<br />
@@ -23,29 +23,37 @@ D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::
  }<br />
  ^<br />
 D:\c+\list\acinator\src\AkinatorTree.cpp: At global scope:<br />
-<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:99:7: warning: no previous declaration for 'char* ReadFile(const char*, size_t*, const char*)' [-Wmissing-declarations]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:103:7: warning: no previous declaration for 'char* ReadFile(const char*, size_t*, const char*)' [-Wmissing-declarations]</font><br />
  char* ReadFile (const char* str, size_t *size, const char* chmod = "r")<br />
        ^~~~~~~~<br />
 D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::NodeToFile(NodeTree*, FILE*)':<br />
-<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:214:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:225:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
  }<br />
  ^<br />
 D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::WriteGraphFile(const char*)':<br />
-<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:231:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:242:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
  }<br />
  ^<br />
 D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::WriteDump(FILE*, NodeTree*)':<br />
-<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:249:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:268:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
  }<br />
  ^<br />
 D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::GraphDump()':<br />
-<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:263:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:290:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::PrintError(int, const char*)':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:294:12: warning: too many arguments for format [-Wformat-extra-args]</font><br />
+     printf("Error occured in function %s code", function_name, err_code);<br />
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:294:12: warning: too many arguments for format [-Wformat-extra-args]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:296:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
  }<br />
  ^<br />
 g++.exe  -o bin\Debug\acinator.exe obj\Debug\main.o obj\Debug\src\AkinatorTree.o<br />
 Output file is bin\Debug\acinator.exe with size 3,05 MB<br />
 <font color="#0000ff">Process terminated with status 0 (0 minute(s), 2 second(s))</font><br />
-<font color="#0000ff">0 error(s), 10 warning(s) (0 minute(s), 2 second(s))</font><br />
+<font color="#0000ff">0 error(s), 13 warning(s) (0 minute(s), 2 second(s))</font><br />
 </tt>
 </body>
 </html>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src\AkinatorTree.cpp" open="1" top="1" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="src\AkinatorTree.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="5347" topLine="217" />
 		<BrowseMarks positions="73,104,574,1022,1054,1278,1520,1663,1665,1842,2029,2126,3430,3945,4114,4145" />
-		<Book_Marks positions="" />
 	</File>
-	<File name="include\AkinatorTree.h" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="include\AkinatorTree.h" open="1" top="0" tabpos="2">
+		<Cursor position="911" topLine="12" />
 		<BrowseMarks positions="150,759" />
-		<Book_Marks positions="" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="156" topLine="0" />
 		<BrowseMarks positions="21" />
-		<Book_Marks positions="" />
+	</File>
+	<File name="include\constants.h" open="1" top="0" tabpos="4">
+		<Cursor position="200" topLine="0" />
 	</File>
 </BrowseTracker_layout_file>

@@ -2,8 +2,11 @@
 #define CONSTANTS_H_INCLUDED
 
 static const char* null_word = "nil";
-static const char* INPUT_GRAPH_FILE = "in_graph.txt";
-static const char* OUTPUT_GRAPH_FILE = "out_graph.txt";
+static const char* input_graph_file = "in_graph.txt";
+static const char* output_graph_file = "out_graph.txt";
+static const char* path_to_graphviz = "./graphviz/";
+static const char* output_graphviz = "tmp_dump.dt";
+
 static const int STR_LENGTH = 255;
 
 enum ReturnCode
@@ -11,7 +14,7 @@ enum ReturnCode
     OK = 0,
     NIL,
     LONG_STRING,
-
+    END_OF_GAME,
 };
 
 #endif // CONSTANTS_H_INCLUDED

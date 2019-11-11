@@ -82,18 +82,22 @@ int AkinatorTree::play(NodeTree* current)
     }
     else
     {
-        printf("%s\n", current->data);
+        printf("%s or exit to go out\n", current->data);
         char answer[STR_LENGTH] = {0};
 
         fgets(answer, STR_LENGTH, stdin);
         answer[strlen(answer) - 1] = '\0';
 
+        if (strcmp(answer, "exit") == 0)
+            return END_OF_GAME;
+
         if (answer[0] == 'y' || answer[0] == 'Y')
             AkinatorTree::play(current->left_child);
+
         else
             AkinatorTree::play(current->right_child);
     }
-    return 0;
+    return OK;
 }
 
 char* ReadFile (const char* str, size_t *size, const char* chmod = "r")
@@ -135,23 +139,26 @@ int AkinatorTree::FillGraph(NodeTree* current, char** ptr_on_text)
         current->left_child = CreateNode(first_word);
 
         if ((*ptr_on_text)[0] == '{')
-            FillGraph(current->left_child, ptr_on_text);
+            err |= FillGraph(current->left_child, ptr_on_text);
         else (*ptr_on_text)++;
     }
     char second_word[STR_LENGTH] = {};
 
     err |= FirstWordFromText(ptr_on_text, second_word);
 
-    if (err == 0)
+    if (err == OK)
     {
         current->right_child = CreateNode(second_word);
 
         if ((*ptr_on_text)[0] == '{')
-            FillGraph(current->right_child, ptr_on_text);
+            err |= FillGraph(current->right_child, ptr_on_text);
         else (*ptr_on_text)++;
     }
 
     (*ptr_on_text)++;
+
+    if (err == NIL)
+        return OK;
 
     return err;
 }
@@ -180,7 +187,7 @@ int FirstWordFromText(char** ptr_on_text, char* tmp_word)
         return NIL;
     }
 
-    return 0;
+    return OK;
 }
 
 
@@ -192,11 +199,15 @@ int AkinatorTree::ReadGraphFile(const char* input_file)
 
     char first_word[STR_LENGTH] = {};
 
-    FirstWordFromText(&text, first_word);
+    int err = FirstWordFromText(&text, first_word);
+
+    if (err) PrintError(err, "ReadGraphFile");
 
     strcpy(head_node->data, first_word);
 
-    FillGraph(head_node, &text);
+    err |= FillGraph(head_node, &text);
+
+    if (err) PrintError(err, "ReadGraphFile");
 
     GraphDump();
     return 0;
@@ -237,27 +248,49 @@ int AkinatorTree::WriteDump(FILE* file, NodeTree* current)
 
     if (current->left_child != nullptr)
     {
-        fprintf(file, "\"%s\"->\"%s\"\n", current->data, current->left_child->data);
+        fprintf(file, "tree_node%p [label = \"%s\"];\n", &(current->data), current->data);
+        fprintf(file, "tree_node%p [label = \"%s\"];\n\n", &(current->left_child->data),
+                                                          current->left_child->data);
+        fprintf(file, "tree_node%p->tree_node%p\n\n", current->data, current->left_child->data);
+
         WriteDump(file, current->left_child);
     }
 
     if (current->right_child != nullptr)
     {
-        fprintf(file, "\"%s\"->\"%s\"\n", current->data, current->right_child->data);
+        fprintf(file, "tree_node%p [label = \"%s\"];\n", &(current->data), current->data);
+        fprintf(file, "tree_node%p [label = \"%s\"];\n\n", &(current->right_child->data),
+                                                          current->right_child->data);
+        fprintf(file, "tree_node%p->tree_node%p\n\n", current->data, current->right_child->data);
+
         WriteDump(file, current->right_child);
     }
 }
 
 int AkinatorTree::GraphDump()
 {
-    FILE* file_graph = fopen("./graphviz/tmp_dump.dt", "w");
-    fprintf(file_graph, "digraph G{ ");
+    char input_path[STR_LENGTH] = {};
+    sprintf(input_path, "%s%s", path_to_graphviz, output_graphviz);
+
+    FILE* file_graph = fopen(input_path, "w");
+    fprintf(file_graph, "digraph G{ \n");
 
     WriteDump(file_graph);
 
     fprintf(file_graph, "}");
 
     fclose(file_graph);
-    system("cd/d ./graphviz/ && dot.exe -Tjpg -O tmp_dump.dt");
+
+    char str_to_system[STR_LENGTH] = {};
+
+    sprintf(str_to_system, "cd/d %s && dot.exe -Tjpg -O %s", path_to_graphviz, output_graphviz);
+
+    system(str_to_system);
+
+}
+
+int AkinatorTree::PrintError(int err_code, const char* function_name)
+{
+    printf("Error occured in function %s code", function_name, err_code);
 
 }

@@ -6,9 +6,10 @@ using namespace std;
 int main()
 {
     AkinatorTree akinator;
-    int i = 4;
-    while(i--)
-        akinator.play();
-    akinator.ReadGraphFile("graph.txt");
+    akinator.ReadGraphFile();
+    system("pause");
+    akinator.play();
+    akinator.GraphDump();
+    akinator.WriteGraphFile();
     system("pause");
 }

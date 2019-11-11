@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/AkinatorTree.h" />
+		<Unit filename="include/constants.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AkinatorTree.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

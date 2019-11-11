@@ -24,21 +24,28 @@ class AkinatorTree
         int play(NodeTree* current = nullptr);
 
         int GraphDump();
-        int ReadGraphFile(const char* input_file = INPUT_GRAPH_FILE);
+        int ReadGraphFile(const char* input_file = input_graph_file);
+
 
         int WriteGraph(NodeTree* current_node, FILE* output_file);
-        int WriteGraphFile(const char* output_file = OUTPUT_GRAPH_FILE);
-    protected:
+
+        int WriteGraphFile(const char* output_file = output_graph_file);
 
     private:
         NodeTree* CreateNode(const char* data = "666");
         NodeTree* head_node;
 
         int NodeToFile(NodeTree* current_node, FILE* output_file);
+
         int FillGraph(NodeTree* current, char** ptr_on_text);
+
         int FillAnswer(NodeTree* cur_node, char* left, char* right, char* question);
+
         int WriteDump(FILE* file, NodeTree* current = nullptr);
+
         int FreeTree(NodeTree* current);
+
+        int PrintError(int err_code, const char* function_name = "");
 };
 
 int FirstWordFromText(char** ptr_on_text, char* word);
