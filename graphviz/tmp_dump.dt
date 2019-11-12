@@ -1,0 +1,122 @@
+digraph G{ 
+tree_node0000000000D41790 [label = "Is it Akinator?"];
+tree_node0000000000D418E0 [label = "Is it university?"];
+
+tree_node0000000000D41790->tree_node0000000000D418E0
+
+tree_node0000000000D418E0 [label = "Is it university?"];
+tree_node0000000000D45CB0 [label = "MIPT"];
+
+tree_node0000000000D418E0->tree_node0000000000D45CB0
+
+tree_node0000000000D418E0 [label = "Is it university?"];
+tree_node0000000000D45DD0 [label = "Can I call by it>"];
+
+tree_node0000000000D418E0->tree_node0000000000D45DD0
+
+tree_node0000000000D45DD0 [label = "Can I call by it>"];
+tree_node0000000000D45EF0 [label = "Is it static?"];
+
+tree_node0000000000D45DD0->tree_node0000000000D45EF0
+
+tree_node0000000000D45EF0 [label = "Is it static?"];
+tree_node0000000000D46010 [label = "Station phone"];
+
+tree_node0000000000D45EF0->tree_node0000000000D46010
+
+tree_node0000000000D45EF0 [label = "Is it static?"];
+tree_node0000000000D46130 [label = "Mobile phone"];
+
+tree_node0000000000D45EF0->tree_node0000000000D46130
+
+tree_node0000000000D45DD0 [label = "Can I call by it>"];
+tree_node0000000000D46250 [label = "Akinator"];
+
+tree_node0000000000D45DD0->tree_node0000000000D46250
+
+tree_node0000000000D41790 [label = "Is it Akinator?"];
+tree_node0000000000D46370 [label = "Is it Animal?"];
+
+tree_node0000000000D41790->tree_node0000000000D46370
+
+tree_node0000000000D46370 [label = "Is it Animal?"];
+tree_node0000000000D46490 [label = "cat eat this?"];
+
+tree_node0000000000D46370->tree_node0000000000D46490
+
+tree_node0000000000D46490 [label = "cat eat this?"];
+tree_node0000000000D465B0 [label = "Is cow let it?"];
+
+tree_node0000000000D46490->tree_node0000000000D465B0
+
+tree_node0000000000D465B0 [label = "Is cow let it?"];
+tree_node0000000000D466D0 [label = "Milk"];
+
+tree_node0000000000D465B0->tree_node0000000000D466D0
+
+tree_node0000000000D465B0 [label = "Is cow let it?"];
+tree_node0000000000D467F0 [label = "mouse"];
+
+tree_node0000000000D465B0->tree_node0000000000D467F0
+
+tree_node0000000000D46490 [label = "cat eat this?"];
+tree_node0000000000D46910 [label = "Is it big"];
+
+tree_node0000000000D46490->tree_node0000000000D46910
+
+tree_node0000000000D46910 [label = "Is it big"];
+tree_node0000000000D46A30 [label = "is he crazy?"];
+
+tree_node0000000000D46910->tree_node0000000000D46A30
+
+tree_node0000000000D46A30 [label = "is he crazy?"];
+tree_node0000000000D46B50 [label = "semer"];
+
+tree_node0000000000D46A30->tree_node0000000000D46B50
+
+tree_node0000000000D46A30 [label = "is he crazy?"];
+tree_node0000000000D46C70 [label = "Dog"];
+
+tree_node0000000000D46A30->tree_node0000000000D46C70
+
+tree_node0000000000D46910 [label = "Is it big"];
+tree_node00000000007C3260 [label = "It exists?"];
+
+tree_node0000000000D46910->tree_node00000000007C3260
+
+tree_node00000000007C3260 [label = "It exists?"];
+tree_node00000000007C2CC0 [label = "Cat"];
+
+tree_node00000000007C3260->tree_node00000000007C2CC0
+
+tree_node00000000007C3260 [label = "It exists?"];
+tree_node00000000007C2F00 [label = "Mickey mouse"];
+
+tree_node00000000007C3260->tree_node00000000007C2F00
+
+tree_node0000000000D46370 [label = "Is it Animal?"];
+tree_node00000000007C2DE0 [label = "Is it use in a computer?"];
+
+tree_node0000000000D46370->tree_node00000000007C2DE0
+
+tree_node00000000007C2DE0 [label = "Is it use in a computer?"];
+tree_node00000000007C2840 [label = "Is it very hard to create?"];
+
+tree_node00000000007C2DE0->tree_node00000000007C2840
+
+tree_node00000000007C2840 [label = "Is it very hard to create?"];
+tree_node00000000007C2600 [label = "CPU"];
+
+tree_node00000000007C2840->tree_node00000000007C2600
+
+tree_node00000000007C2840 [label = "Is it very hard to create?"];
+tree_node00000000007C2720 [label = "Mouse"];
+
+tree_node00000000007C2840->tree_node00000000007C2720
+
+tree_node00000000007C2DE0 [label = "Is it use in a computer?"];
+tree_node00000000007C3020 [label = "MIPT"];
+
+tree_node00000000007C2DE0->tree_node00000000007C3020
+
+}
