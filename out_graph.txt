@@ -1,162 +1,90 @@
-{ "Akinator?"
+{ "Love Physics?"
 { 
-	"Is it university?
+	"From MFTI?
 "{ 
-	"MIPT
+	"CRAZY about physics?
 "{ 
-	"nil
-" }
-{ 
-	"nil
-" }
- }
-{ 
-	"Can I call by it ?
+	"Have rector?
 "{ 
-	"Is it static ?
-"{ 
-	"Station phone
-"{ 
-	"nil
-" }
-{ 
-	"nil
-" }
- }
-{ 
-	"Mobile phone
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"FOPF
 " }
  }
  }
 { 
-	"Akinator
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"FEFM
 " }
  }
  }
  }
 { 
-	"Is it Animal ?
+	"Appreciate each other?
 "{ 
-	"cat eat this ?
-"{ 
-	"Is cow let it ?
-"{ 
-	"Milk
-"{ 
-	"nil
-" }
-{ 
-	"nil
-" }
- }
-{ 
-	"mouse
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"FIVT
 " }
  }
  }
 { 
-	"Is it big
+	"EXIST
 "{ 
-	"is he crazy ?
-"{ 
-	"semer
-"{ 
-	"nil
-" }
-{ 
-	"nil
-" }
- }
-{ 
-	"Dog
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"FRTK
 " }
  }
  }
 { 
-	"It exists ?
-"{ 
-	"Cat
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"INBIKS
 " }
  }
+ }
+ }
+ }
+ }
 { 
-	"Mickey mouse
+	"Holy place?
 "{ 
-	"nil
+	"MEPHI
 " }
+ }
+ }
 { 
-	"nil
+	"MAI
 " }
  }
  }
  }
  }
 { 
-	"Is it use in a computer ?
+	"Average teacher's age 90?
 "{ 
-	"Is it very hard to create ?
+	"Teacher killed his student and lover?
 "{ 
-	"CPU
-"{ 
-	"nil
-" }
-{ 
-	"nil
-" }
- }
-{ 
-	"Mouse
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"SPSU
 " }
  }
  }
 { 
-	"Is it in the center of the Moscow
-"{ 
-	"HSE
-"{ 
-	"nil
-" }
-{ 
-	"nil
+	"BAUMANA
 " }
  }
+ }
+ }
 { 
-	"MIPT
+	"Scolarship 36k rubles?
 "{ 
-	"nil
+	"INNOPILS
 " }
+ }
+ }
 { 
-	"nil
+	"Dangerous roof?
+"{ 
+	"ITMO
 " }
+ }
+ }
+{ 
+	"MSU
+" }
+ }
  }
  }
  }

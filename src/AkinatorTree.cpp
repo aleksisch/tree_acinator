@@ -248,28 +248,24 @@ int AkinatorTree::FillGraph(TreeNode* current, char** ptr_on_text)
 
     int err = FirstWordFromText(ptr_on_text, first_word);
 
-    if (err == OK)
-    {
-        current->left_child = new TreeNode(first_word);
+    current->left_child = new TreeNode(first_word);
 
+    if (err == OK)
         err |= FillGraph(current->left_child, ptr_on_text);
-    }
 
     char second_word[STR_LENGTH] = {};
 
     int err2 = FirstWordFromText(ptr_on_text, second_word);
 
-    if (err2 == OK)
-    {
-        current->right_child = new TreeNode(second_word);
+    current->right_child = new TreeNode(second_word);
 
+    if (err2 == OK)
         err2 |= FillGraph(current->right_child, ptr_on_text);
-    }
 
     SkipToBrace(ptr_on_text);
-    (*ptr_on_text)++;
 
-    if ((err | err2) == NIL)
+    if ((err  == NIL || err  == OK) ||
+        (err2 == NIL || err2 == OK))
         return OK;
 
     return (err | err2);
@@ -282,6 +278,8 @@ int AkinatorTree::ReadGraphFile(const char* input_file)
 
     char* text = ReadFile(input_file, &size, "r");
 
+    FirstWordFromText(&text, (head_node->data));
+
     int err = FillGraph(head_node, &text);
 
     if (err) PrintError(err, "ReadGraphFile");
@@ -291,12 +289,9 @@ int AkinatorTree::ReadGraphFile(const char* input_file)
 
 int AkinatorTree::NodeToFile(TreeNode* current_node, FILE* output_file)
 {
-    if (current_node  == nullptr)
-        fprintf(output_file, "{ \n\t\"%s\n\"", null_word);
-
-    else
+    if (current_node  != nullptr)
     {
-        fprintf(output_file, "{ \n\t\"%s\n\"", current_node->data);
+        fprintf(output_file, "{ \n\t\"%s\"\n", current_node->data);
         WriteGraph(current_node, output_file);
     }
 

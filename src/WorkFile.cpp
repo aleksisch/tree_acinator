@@ -4,8 +4,6 @@ int FirstWordFromText(char** ptr_on_text, char* tmp_word)
 {
     SkipToBrace(ptr_on_text);
 
-    (*ptr_on_text)++;
-
     int counter = 0;
 
     bool is_one_quote = false;
@@ -23,10 +21,11 @@ int FirstWordFromText(char** ptr_on_text, char* tmp_word)
             (*ptr_on_text)++;
         }
 
+    printf("%s\n", tmp_word);
     if (counter > STR_LENGTH - 1)
         return LONG_STRING;
 
-    if (strcmp(tmp_word, null_word) == 0)
+    if (**ptr_on_text == '}')
     {
         (*ptr_on_text)++;
         return NIL;
@@ -40,6 +39,7 @@ void SkipToBrace(char** ptr_on_text)
     while (**ptr_on_text != '{' &&
            **ptr_on_text != '}')
            (*ptr_on_text)++;
+    (*ptr_on_text)++;
 }
 
 char* ReadFile (const char* str, size_t *size, const char* chmod)

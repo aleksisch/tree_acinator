@@ -26,7 +26,7 @@ int FirstWordFromText(char** ptr_on_text, char* tmp_word)
     if (counter > STR_LENGTH - 1)
         return LONG_STRING;
 
-    if (strcmp(tmp_word, null_word) == 0)
+    if (ptr_on_text == '}')
     {
         (*ptr_on_text)++;
         return NIL;

@@ -1,132 +1,112 @@
 digraph G{ 
-tree_node00000000001E1790 [label = "Akinator?"];
-tree_node00000000001E18E0 [label = "Is it university?"];
+tree_node0000000000171790 [label = "Love Physics?"];
+tree_node0000000000176AF0 [label = "From MFTI?"];
 
-tree_node00000000001E1790->tree_node00000000001E18E0
+tree_node0000000000171790->tree_node0000000000176AF0
 
-tree_node00000000001E18E0 [label = "Is it university?"];
-tree_node00000000001E5F10 [label = "MIPT"];
+tree_node0000000000176AF0 [label = "From MFTI?"];
+tree_node0000000000176C10 [label = "CRAZY about physics?"];
 
-tree_node00000000001E18E0->tree_node00000000001E5F10
+tree_node0000000000176AF0->tree_node0000000000176C10
 
-tree_node00000000001E18E0 [label = "Is it university?"];
-tree_node00000000001E6030 [label = "Can I call by it ?"];
+tree_node0000000000176C10 [label = "CRAZY about physics?"];
+tree_node0000000000176D30 [label = "Have rector?"];
 
-tree_node00000000001E18E0->tree_node00000000001E6030
+tree_node0000000000176C10->tree_node0000000000176D30
 
-tree_node00000000001E6030 [label = "Can I call by it ?"];
-tree_node00000000001E6150 [label = "Is it static ?"];
+tree_node0000000000176D30 [label = "Have rector?"];
+tree_node0000000000176E50 [label = "FOPF"];
 
-tree_node00000000001E6030->tree_node00000000001E6150
+tree_node0000000000176D30->tree_node0000000000176E50
 
-tree_node00000000001E6150 [label = "Is it static ?"];
-tree_node00000000001E6270 [label = "Station phone"];
+tree_node0000000000176D30 [label = "Have rector?"];
+tree_node00000000007C2490 [label = "FEFM"];
 
-tree_node00000000001E6150->tree_node00000000001E6270
+tree_node0000000000176D30->tree_node00000000007C2490
 
-tree_node00000000001E6150 [label = "Is it static ?"];
-tree_node00000000001E6390 [label = "Mobile phone"];
+tree_node0000000000176C10 [label = "CRAZY about physics?"];
+tree_node00000000007C25B0 [label = "Appreciate each other?"];
 
-tree_node00000000001E6150->tree_node00000000001E6390
+tree_node0000000000176C10->tree_node00000000007C25B0
 
-tree_node00000000001E6030 [label = "Can I call by it ?"];
-tree_node00000000001E64B0 [label = "Akinator"];
+tree_node00000000007C25B0 [label = "Appreciate each other?"];
+tree_node00000000007C26D0 [label = "FIVT"];
 
-tree_node00000000001E6030->tree_node00000000001E64B0
+tree_node00000000007C25B0->tree_node00000000007C26D0
 
-tree_node00000000001E1790 [label = "Akinator?"];
-tree_node00000000001E65D0 [label = "Is it Animal ?"];
+tree_node00000000007C25B0 [label = "Appreciate each other?"];
+tree_node00000000007C27F0 [label = "EXIST"];
 
-tree_node00000000001E1790->tree_node00000000001E65D0
+tree_node00000000007C25B0->tree_node00000000007C27F0
 
-tree_node00000000001E65D0 [label = "Is it Animal ?"];
-tree_node00000000001E66F0 [label = "cat eat this ?"];
+tree_node00000000007C27F0 [label = "EXIST"];
+tree_node00000000007C2910 [label = "FRTK"];
 
-tree_node00000000001E65D0->tree_node00000000001E66F0
+tree_node00000000007C27F0->tree_node00000000007C2910
 
-tree_node00000000001E66F0 [label = "cat eat this ?"];
-tree_node00000000001E6810 [label = "Is cow let it ?"];
+tree_node00000000007C27F0 [label = "EXIST"];
+tree_node00000000007C2A30 [label = "INBIKS"];
 
-tree_node00000000001E66F0->tree_node00000000001E6810
+tree_node00000000007C27F0->tree_node00000000007C2A30
 
-tree_node00000000001E6810 [label = "Is cow let it ?"];
-tree_node00000000001E6930 [label = "Milk"];
+tree_node0000000000176AF0 [label = "From MFTI?"];
+tree_node00000000007C2B50 [label = "Holy place?"];
 
-tree_node00000000001E6810->tree_node00000000001E6930
+tree_node0000000000176AF0->tree_node00000000007C2B50
 
-tree_node00000000001E6810 [label = "Is cow let it ?"];
-tree_node00000000001E6A50 [label = "mouse"];
+tree_node00000000007C2B50 [label = "Holy place?"];
+tree_node00000000007C2C70 [label = "MEPHI"];
 
-tree_node00000000001E6810->tree_node00000000001E6A50
+tree_node00000000007C2B50->tree_node00000000007C2C70
 
-tree_node00000000001E66F0 [label = "cat eat this ?"];
-tree_node00000000001E6B70 [label = "Is it big"];
+tree_node00000000007C2B50 [label = "Holy place?"];
+tree_node00000000007C2D90 [label = "MAI"];
 
-tree_node00000000001E66F0->tree_node00000000001E6B70
+tree_node00000000007C2B50->tree_node00000000007C2D90
 
-tree_node00000000001E6B70 [label = "Is it big"];
-tree_node00000000001E6C90 [label = "is he crazy ?"];
+tree_node0000000000171790 [label = "Love Physics?"];
+tree_node00000000007C2EB0 [label = "Average teacher's age 90?"];
 
-tree_node00000000001E6B70->tree_node00000000001E6C90
+tree_node0000000000171790->tree_node00000000007C2EB0
 
-tree_node00000000001E6C90 [label = "is he crazy ?"];
-tree_node00000000001E6DB0 [label = "semer"];
+tree_node00000000007C2EB0 [label = "Average teacher's age 90?"];
+tree_node00000000007C2FD0 [label = "Teacher killed his student and lover?"];
 
-tree_node00000000001E6C90->tree_node00000000001E6DB0
+tree_node00000000007C2EB0->tree_node00000000007C2FD0
 
-tree_node00000000001E6C90 [label = "is he crazy ?"];
-tree_node0000000000B72490 [label = "Dog"];
+tree_node00000000007C2FD0 [label = "Teacher killed his student and lover?"];
+tree_node00000000007C30F0 [label = "SPSU"];
 
-tree_node00000000001E6C90->tree_node0000000000B72490
+tree_node00000000007C2FD0->tree_node00000000007C30F0
 
-tree_node00000000001E6B70 [label = "Is it big"];
-tree_node0000000000B72720 [label = "It exists ?"];
+tree_node00000000007C2FD0 [label = "Teacher killed his student and lover?"];
+tree_node00000000001777A0 [label = "BAUMANA"];
 
-tree_node00000000001E6B70->tree_node0000000000B72720
+tree_node00000000007C2FD0->tree_node00000000001777A0
 
-tree_node0000000000B72720 [label = "It exists ?"];
-tree_node0000000000B72F00 [label = "Cat"];
+tree_node00000000007C2EB0 [label = "Average teacher's age 90?"];
+tree_node0000000000177C20 [label = "Scolarship 36k rubles?"];
 
-tree_node0000000000B72720->tree_node0000000000B72F00
+tree_node00000000007C2EB0->tree_node0000000000177C20
 
-tree_node0000000000B72720 [label = "It exists ?"];
-tree_node0000000000B72840 [label = "Mickey mouse"];
+tree_node0000000000177C20 [label = "Scolarship 36k rubles?"];
+tree_node00000000001770E0 [label = "INNOPILS"];
 
-tree_node0000000000B72720->tree_node0000000000B72840
+tree_node0000000000177C20->tree_node00000000001770E0
 
-tree_node00000000001E65D0 [label = "Is it Animal ?"];
-tree_node0000000000B72960 [label = "Is it use in a computer ?"];
+tree_node0000000000177C20 [label = "Scolarship 36k rubles?"];
+tree_node0000000000177680 [label = "Dangerous roof?"];
 
-tree_node00000000001E65D0->tree_node0000000000B72960
+tree_node0000000000177C20->tree_node0000000000177680
 
-tree_node0000000000B72960 [label = "Is it use in a computer ?"];
-tree_node0000000000B73380 [label = "Is it very hard to create ?"];
+tree_node0000000000177680 [label = "Dangerous roof?"];
+tree_node0000000000176FC0 [label = "ITMO"];
 
-tree_node0000000000B72960->tree_node0000000000B73380
+tree_node0000000000177680->tree_node0000000000176FC0
 
-tree_node0000000000B73380 [label = "Is it very hard to create ?"];
-tree_node0000000000B72A80 [label = "CPU"];
+tree_node0000000000177680 [label = "Dangerous roof?"];
+tree_node0000000000177200 [label = "MSU"];
 
-tree_node0000000000B73380->tree_node0000000000B72A80
-
-tree_node0000000000B73380 [label = "Is it very hard to create ?"];
-tree_node0000000000B72BA0 [label = "Mouse"];
-
-tree_node0000000000B73380->tree_node0000000000B72BA0
-
-tree_node0000000000B72960 [label = "Is it use in a computer ?"];
-tree_node0000000000B72600 [label = "Is it in the center of the Moscow"];
-
-tree_node0000000000B72960->tree_node0000000000B72600
-
-tree_node0000000000B72600 [label = "Is it in the center of the Moscow"];
-tree_node0000000000B72CC0 [label = "HSE"];
-
-tree_node0000000000B72600->tree_node0000000000B72CC0
-
-tree_node0000000000B72600 [label = "Is it in the center of the Moscow"];
-tree_node0000000000B72DE0 [label = "MIPT"];
-
-tree_node0000000000B72600->tree_node0000000000B72DE0
+tree_node0000000000177680->tree_node0000000000177200
 
 }
