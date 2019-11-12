@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "constants.h"
+#include "WorkFile.h"
 
 struct Question
 {
@@ -33,7 +34,7 @@ class AkinatorTree
         AkinatorTree();
         ~AkinatorTree();
 
-        int GraphDump();
+        int GraphToDot();
 
         int Play();
 
@@ -49,11 +50,11 @@ class AkinatorTree
 
     private:
 
+        int FillGraph(TreeNode* current, char** ptr_on_text);
+
         TreeNode* head_node;
 
         int NodeToFile(TreeNode* current_node, FILE* output_file);
-
-        int FillGraph(TreeNode* current, char** ptr_on_text);
 
         int FillAnswer(TreeNode* cur_node, const char* left, const char* right, const char* question);
 
@@ -61,16 +62,8 @@ class AkinatorTree
 
         void FreeTree(TreeNode* current);
 
-        int PrintError(int err_code, const char* function_name = "");
-
         int GetNodeInfo(TreeNode* current, const char* name, Question* arr_q, int counter = 0);
 
         int WriteGraph(TreeNode* current_node, FILE* output_file);
-
-        int GetString(char** str)
 };
-
-int FirstWordFromText(char** ptr_on_text, char* word);
-const char* bool_to_str(bool a);
-
 #endif // AKINATORTREE_H

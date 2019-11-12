@@ -48,7 +48,7 @@ int AkinatorTree::ObjectInfo(const char* name)
         return BAD_NAME;
     }
 
-    printf("\n %s:\n", name);
+    printf("%s:\n", name);
 
     while (strcmp(node_info->question, name))
     {
@@ -117,15 +117,6 @@ int AkinatorTree::CompareNode(const char* first_name, const char* second_name)
     return 0;
 }
 
-const char* bool_to_str(bool a)
-{
-    if (a)
-        return "Yes";
-
-    else
-        return "Not";
-}
-
 int AkinatorTree::GetNodeInfo(TreeNode* current, const char* name, Question* arr_q, int counter)
 {
     if (current == nullptr) ;
@@ -164,27 +155,32 @@ int AkinatorTree::Play()
     printf("what will we do?\n1 - play akinator,\n"
            "2 - compare two object,\n"
            "3 - get information about object\n"
-           "if you want end game enter exit\n");
+           "if you want end game enter exit: ");
     int type_play = 0;
     scanf("%d", &type_play);
 
     if (type_play == 1)
         return PlayAkinator();
 
-    char first_name[STR_LENGTH] = {};
-    printf("enter first object name\n");
-    scanf("%s", first_name);
-
     if (type_play == 2)
     {
+        char first_name[STR_LENGTH] = {};
+        printf("enter first object name\n");
+        GetString(first_name);
+
         char second_name[STR_LENGTH] = {};
         printf("Enter second object name\n");
-        scanf("%s", second_name);
+        GetString(second_name);
         CompareNode(first_name, second_name);
     }
 
     else if (type_play == 3)
+    {
+        char first_name[STR_LENGTH] = {};
+        printf("enter first object name\n");
+        GetString(first_name);
         ObjectInfo(first_name);
+    }
 
     else
         printf("exit");
@@ -207,8 +203,8 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
 
         char answer[STR_LENGTH] = {0};
 
-        GetString(answer)
-        
+        GetString(answer);
+
         if (answer[0] == 'y' || answer[0] == 'Y')
             printf("haha\n");
 
@@ -220,7 +216,7 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
             GetString(ans);
 
             printf("Enter differences answer, no mean my object, yes mean your's\n");
-            
+
             char new_q[STR_LENGTH] = {};
             GetString(new_q);
 
@@ -229,12 +225,10 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
     }
     else
     {
-        printf("%s || write exit to go out\n", current->data);
-        char answer[STR_LENGTH] = {0};
-
-        GetString(answer)
-        fgets(answer, STR_LENGTH, stdin);
-        answer[strlen(answer) - 1] = '\0';
+        printf("!\n");
+        printf("%s end\n", current->data);
+        char answer[STR_LENGTH] = {};
+        GetString(answer);
 
         if (strcmp(answer, "exit") == 0)
             return END_OF_GAME;
@@ -248,33 +242,6 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
     return OK;
 }
 
-char* ReadFile (const char* str, size_t *size, const char* chmod = "r")
-{
-    FILE *fp = NULL;
-
-    if ((fp = fopen(str, chmod)) == NULL)
-    {
-        printf("Cannot find text\n");
-        system("pause");
-        exit(0);
-    }
-
-    fseek (fp, 0L, SEEK_END);
-
-    *size = ftell(fp);
-
-    char *text = (char *) calloc(*size + 1, sizeof(char));
-
-    fseek (fp, 0L, SEEK_SET);
-
-    fread (text, sizeof(char), *size, fp);
-
-    text[*size] = '\0';
-
-    fclose (fp);
-
-    return text;
-}
 
 int AkinatorTree::FillGraph(TreeNode* current, char** ptr_on_text)
 {
@@ -282,60 +249,31 @@ int AkinatorTree::FillGraph(TreeNode* current, char** ptr_on_text)
 
     int err = FirstWordFromText(ptr_on_text, first_word);
 
-    if (err == 0)
+    if (err == OK)
     {
         current->left_child = new TreeNode(first_word);
 
-        if ((*ptr_on_text)[0] == '{')
-            err |= FillGraph(current->left_child, ptr_on_text);
-        else (*ptr_on_text)++;
+        err |= FillGraph(current->left_child, ptr_on_text);
     }
+
     char second_word[STR_LENGTH] = {};
 
-    err |= FirstWordFromText(ptr_on_text, second_word);
+    int err2 = FirstWordFromText(ptr_on_text, second_word);
 
-    if (err == OK)
+    if (err2 == OK)
     {
         current->right_child = new TreeNode(second_word);
 
-        if ((*ptr_on_text)[0] == '{')
-            err |= FillGraph(current->right_child, ptr_on_text);
-        else (*ptr_on_text)++;
+        err2 |= FillGraph(current->right_child, ptr_on_text);
     }
 
+    SkipToBrace(ptr_on_text);
     (*ptr_on_text)++;
 
-    if (err == NIL)
+    if ((err | err2) == NIL)
         return OK;
 
-    return err;
-}
-
-int FirstWordFromText(char** ptr_on_text, char* tmp_word)
-{
-    (*ptr_on_text)++;
-    int counter = 0;
-
-    while ((counter < STR_LENGTH) &&
-           ((*ptr_on_text))[0] != '{' &&
-           ((*ptr_on_text))[0] != '}')
-        {
-            if ((*ptr_on_text)[0] != '\n')
-                tmp_word[counter++] = (*ptr_on_text)[0];
-            (*ptr_on_text)++;
-
-        }
-
-    if (counter + 1 == STR_LENGTH)
-        return LONG_STRING;
-
-    if (strcmp(tmp_word, null_word) == 0)
-    {
-        (*ptr_on_text)++;
-        return NIL;
-    }
-
-    return OK;
+    return (err | err2);
 }
 
 
@@ -345,31 +283,25 @@ int AkinatorTree::ReadGraphFile(const char* input_file)
 
     char* text = ReadFile(input_file, &size, "r");
 
-    char first_word[STR_LENGTH] = {};
-
-    int err = FirstWordFromText(&text, first_word);
+    int err = FillGraph(head_node, &text);
 
     if (err) PrintError(err, "ReadGraphFile");
 
-    strcpy(head_node->data, first_word);
-
-    err |= FillGraph(head_node, &text);
-
-    if (err) PrintError(err, "ReadGraphFile");
-
-    GraphDump();
     return 0;
 }
 
 int AkinatorTree::NodeToFile(TreeNode* current_node, FILE* output_file)
 {
     if (current_node  == nullptr)
-        fprintf(output_file, "{%s", null_word);
+        fprintf(output_file, "{ \n\"%s\"", null_word);
+
     else
-        fprintf(output_file, "{%s", current_node->data);
-    if (current_node  != nullptr)
+    {
+        fprintf(output_file, "{ \n\"%s\"", current_node->data);
         WriteGraph(current_node, output_file);
-    fprintf(output_file, "}");
+    }
+
+    fprintf(output_file, " }");
 }
 
 int AkinatorTree::WriteGraph(TreeNode* current_node, FILE* output_file)
@@ -384,9 +316,11 @@ int AkinatorTree::WriteGraphFile(const char* output_file)
 {
     FILE* graph_file = fopen(output_file, "w");
 
-    fprintf(graph_file, " %s", head_node->data);
+    fprintf(graph_file, "{%s\n", head_node->data);
 
     WriteGraph(head_node, graph_file);
+
+    fprintf(graph_file, "}");
 }
 
 int AkinatorTree::WriteDump(FILE* file, TreeNode* current)
@@ -415,7 +349,7 @@ int AkinatorTree::WriteDump(FILE* file, TreeNode* current)
     }
 }
 
-int AkinatorTree::GraphDump()
+int AkinatorTree::GraphToDot()
 {
     char input_path[STR_LENGTH] = {};
     sprintf(input_path, "%s%s", path_to_graphviz, output_graphviz);
@@ -435,16 +369,4 @@ int AkinatorTree::GraphDump()
     sprintf(str_to_system, "cd/d %s && dot.exe -Tjpg -O %s", path_to_graphviz, output_graphviz);
 
     system(str_to_system);
-
-}
-
-int AkinatorTree::GetString(char* str)
-{
-    fgets(str, STR_LENGTH, stdin);
-    str[strlen(str) - 1] = '\0';
-}
-
-int AkinatorTree::PrintError(int err_code, const char* function_name)
-{
-    printf("Error occured in function %s code", function_name, err_code);
 }

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src\AkinatorTree.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="1245" topLine="75" />
-		<BrowseMarks positions="5834,9325,9496,1306,1416,1712,1945,2116,2563,2599,2757,2814,2938,3029,3245,3332,3489,4310,4554,5504" />
-		<Book_Marks positions="" />
+	<File name="src\WorkFile.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="1614" topLine="69" />
 	</File>
-	<File name="include\constants.h" open="1" top="0" tabpos="4">
-		<Cursor position="358" topLine="0" />
-		<BrowseMarks positions="" />
-		<Book_Marks positions="" />
+	<File name="src\AkinatorTree.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1324" topLine="123" />
+		<BrowseMarks positions="5834,9325,9496,1306,1416,1712,1945,2116,2563,2599,2757,2814,2938,3029,3245,3332,3489,4310,4554,5504" />
+	</File>
+	<File name="include\WorkFile.h" open="1" top="0" tabpos="7">
+		<Cursor position="294" topLine="0" />
+	</File>
+	<File name="include\constants.h" open="1" top="0" tabpos="3">
+		<Cursor position="487" topLine="0" />
 	</File>
 	<File name="include\AkinatorTree.h" open="1" top="0" tabpos="2">
-		<Cursor position="1210" topLine="0" />
+		<Cursor position="1382" topLine="0" />
 		<BrowseMarks positions="227,335,439,484,488,944" />
-		<Book_Marks positions="" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="225" topLine="0" />
+		<Cursor position="192" topLine="0" />
 		<BrowseMarks positions="21" />
-		<Book_Marks positions="" />
 	</File>
 </BrowseTracker_layout_file>
