@@ -33,7 +33,7 @@ class AkinatorTree
         AkinatorTree();
         ~AkinatorTree();
 
-        int GraphDump();
+        int GraphToDot();
 
         int Play();
 
@@ -66,11 +66,7 @@ class AkinatorTree
         int GetNodeInfo(TreeNode* current, const char* name, Question* arr_q, int counter = 0);
 
         int WriteGraph(TreeNode* current_node, FILE* output_file);
-        
-        int GetString(char** str)
+
+        int GetString(char* str);
 };
-
-int FirstWordFromText(char** ptr_on_text, char* word);
-const char* bool_to_str(bool a);
-
 #endif // AKINATORTREE_H
