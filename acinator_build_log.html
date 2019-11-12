@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>acinator build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>12-11-2019 at 12:34.29</u><br />
+Build ended on: <u>12-11-2019 at 12:34.33</u><p />
+<b>-------------- Build: Debug in acinator (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+g++.exe -Wall -fexceptions -g -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC  -c D:\c+\list\acinator\main.cpp -o obj\Debug\main.o<br />
+g++.exe -Wall -fexceptions -g -Wnon-virtual-dtor -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC  -c D:\c+\list\acinator\src\AkinatorTree.cpp -o obj\Debug\src\AkinatorTree.o<br />
+In file included from D:\c+\list\acinator\src\AkinatorTree.cpp:1:<br />
+<font color="#0000ff">d:\c+\list\acinator\include\akinatortree.h:29:7: warning: 'class AkinatorTree' has pointer data members [-Weffc++]</font><br />
+ class AkinatorTree<br />
+       ^~~~~~~~~~~~<br />
+<font color="#0000ff">d:\c+\list\acinator\include\akinatortree.h:29:7: warning:   but does not override 'AkinatorTree(const AkinatorTree&amp;)' [-Weffc++]</font><br />
+<font color="#0000ff">d:\c+\list\acinator\include\akinatortree.h:29:7: warning:   or 'operator=(const AkinatorTree&amp;)' [-Weffc++]</font><br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In constructor 'AkinatorTree::AkinatorTree()':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:3:1: warning: 'AkinatorTree::head_node' should be initialized in the member initialization list [-Weffc++]</font><br />
+ AkinatorTree::AkinatorTree()<br />
+ ^~~~~~~~~~~~<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::Play()':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:189:5: warning: this 'else' clause does not guard... [-Wmisleading-indentation]</font><br />
+     else<br />
+     ^~~~<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp:191:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'<br />
+         return END_OF_GAME;<br />
+         ^~~~~~<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: At global scope:<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:254:7: warning: no previous declaration for 'char* ReadFile(const char*, size_t*, const char*)' [-Wmissing-declarations]</font><br />
+ char* ReadFile (const char* str, size_t *size, const char* chmod = "r")<br />
+       ^~~~~~~~<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::NodeToFile(TreeNode*, FILE*)':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:376:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::WriteGraphFile(const char*)':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:393:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::WriteDump(FILE*, TreeNode*)':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:419:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::GraphDump()':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:442:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+D:\c+\list\acinator\src\AkinatorTree.cpp: In member function 'int AkinatorTree::PrintError(int, const char*)':<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:446:12: warning: too many arguments for format [-Wformat-extra-args]</font><br />
+     printf("Error occured in function %s code", function_name, err_code);<br />
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:446:12: warning: too many arguments for format [-Wformat-extra-args]</font><br />
+<font color="#0000ff">D:\c+\list\acinator\src\AkinatorTree.cpp:447:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+In file included from D:\c+\list\acinator\main.cpp:2:<br />
+<font color="#0000ff">d:\c+\list\acinator\include\akinatortree.h:29:7: warning: 'class AkinatorTree' has pointer data members [-Weffc++]</font><br />
+ class AkinatorTree<br />
+       ^~~~~~~~~~~~<br />
+<font color="#0000ff">d:\c+\list\acinator\include\akinatortree.h:29:7: warning:   but does not override 'AkinatorTree(const AkinatorTree&amp;)' [-Weffc++]</font><br />
+<font color="#0000ff">d:\c+\list\acinator\include\akinatortree.h:29:7: warning:   or 'operator=(const AkinatorTree&amp;)' [-Weffc++]</font><br />
+In file included from d:\c+\list\acinator\include\akinatortree.h:7,<br />
+                 from D:\c+\list\acinator\main.cpp:2:<br />
+<font color="#0000ff">d:\c+\list\acinator\include\constants.h:8:20: warning: 'output_graphviz' defined but not used [-Wunused-variable]</font><br />
+ static const char* output_graphviz = "tmp_dump.dt";<br />
+                    ^~~~~~~~~~~~~~~<br />
+<font color="#0000ff">d:\c+\list\acinator\include\constants.h:7:20: warning: 'path_to_graphviz' defined but not used [-Wunused-variable]</font><br />
+ static const char* path_to_graphviz = "./graphviz/";<br />
+                    ^~~~~~~~~~~~~~~~<br />
+<font color="#0000ff">d:\c+\list\acinator\include\constants.h:4:20: warning: 'null_word' defined but not used [-Wunused-variable]</font><br />
+ static const char* null_word = "nil";<br />
+                    ^~~~~~~~~<br />
+g++.exe  -o bin\Debug\acinator.exe obj\Debug\main.o obj\Debug\src\AkinatorTree.o   -lwinmm<br />
+Output file is bin\Debug\acinator.exe with size 3,06 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minute(s), 3 second(s))</font><br />
+<font color="#0000ff">0 error(s), 19 warning(s) (0 minute(s), 3 second(s))</font><br />
+</tt>
+</body>
+</html>
