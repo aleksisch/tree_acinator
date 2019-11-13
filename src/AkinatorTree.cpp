@@ -44,15 +44,21 @@ int AkinatorTree::ObjectInfo(const char* name)
 
     if (is_found == NIL)
     {
-        printf("Bad name");
+        sprintf(tmp_to_printf, "Bad name");
+        print_say(tmp_to_printf);
+        memset(tmp_to_printf, 0, STR_LENGTH);
+
         return BAD_NAME;
     }
 
-    printf("%s:\n", name);
+    sprintf(tmp_to_printf, "%s:\n", name);
+    print_say(tmp_to_printf);
 
     while (strcmp(node_info->question, name))
     {
-        printf("\"%s\" %s\n", node_info->question, bool_to_str((node_info)->answer));
+        sprintf(tmp_to_printf, "\"%s\" %s\n", node_info->question, bool_to_str((node_info)->answer));
+        print_say(tmp_to_printf);
+
         node_info++;
     }
 
@@ -64,6 +70,7 @@ int AkinatorTree::ObjectInfo(const char* name)
 
 int AkinatorTree::CompareNode(const char* first_name, const char* second_name)
 {
+    char tmp_to_printf[STR_LENGTH] = {};
     Question* first_info = new Question[MAX_DEPTH];
 
     int is_found_first = GetNodeInfo(head_node, first_name, first_info);
@@ -74,13 +81,17 @@ int AkinatorTree::CompareNode(const char* first_name, const char* second_name)
 
     if (is_found_first == NIL)
     {
-        printf("Bad first name");
+        sprintf(tmp_to_printf, "Bad first name");
+        print_say(tmp_to_printf);
+
         return BAD_NAME;
     }
 
     if (is_found_second == NIL)
     {
-        printf("Bad first name");
+        sprintf(tmp_to_printf, "Bad first name");
+        print_say(tmp_to_printf);
+
         return BAD_NAME;
     }
 
@@ -89,26 +100,32 @@ int AkinatorTree::CompareNode(const char* first_name, const char* second_name)
                   first_info->answer     ==
                   second_info->answer)
     {
-        printf("Both object is \"%s\" %s\n", first_info->question, bool_to_str(first_info->answer));
+        sprintf(tmp_to_printf, "Both object is \"%s\" %s\n", first_info->question, bool_to_str(first_info->answer));
+        print_say(tmp_to_printf);
+
         first_info++;
         second_info++;
     }
 
-    printf("Differences:\n");
+    sprintf(tmp_to_printf, "Differences:\n");
+    print_say(tmp_to_printf);
 
-    printf("\nfor %s:\n", first_name);
+    sprintf(tmp_to_printf, "\nfor %s:\n", first_name);
+    print_say(tmp_to_printf);
 
     while (strcmp(first_info->question, first_name))
     {
-        printf("\"%s\" %s\n", first_info->question, bool_to_str(first_info->answer));
+        sprintf(tmp_to_printf, "\"%s\" %s\n", first_info->question, bool_to_str(first_info->answer));
+        print_say(tmp_to_printf);
         first_info++;
     }
 
-    printf("\nfor %s:\n", second_name);
-
+    sprintf(tmp_to_printf, "\nfor %s:\n", second_name);
+    print_say(tmp_to_printf);
     while (strcmp(second_info->question, second_name))
     {
-        printf("\"%s\" %s\n", second_info->question, bool_to_str((second_info)->answer));
+        sprintf(tmp_to_printf, "\"%s\" %s\n", second_info->question, bool_to_str((second_info)->answer));
+        print_say(tmp_to_printf);
         second_info++;
     }
 
@@ -152,10 +169,11 @@ int AkinatorTree::GetNodeInfo(TreeNode* current, const char* name, Question* arr
 
 int AkinatorTree::Play()
 {
-    printf("what will we do?\n1 - play akinator,\n"
+    sprintf(tmp_to_printf, "what will we do?\n1 - play akinator,\n"
            "2 - compare two object,\n"
            "3 - get information about object\n"
            "if you want end game enter exit: ");
+    print_say(tmp_to_printf);
     int type_play = 0;
     scanf("%d%*c", &type_play);
 
@@ -165,11 +183,17 @@ int AkinatorTree::Play()
     if (type_play == 2)
     {
         char first_name[STR_LENGTH] = {};
-        printf("enter first object name\n");
+
+        sprintf(tmp_to_printf, "enter first object name\n");
+        print_say(tmp_to_printf);
+
         GetString(first_name);
 
         char second_name[STR_LENGTH] = {};
-        printf("Enter second object name\n");
+
+        sprintf(tmp_to_printf, "Enter second object name\n");
+        print_say(tmp_to_printf);
+
         GetString(second_name);
         CompareNode(first_name, second_name);
     }
@@ -177,15 +201,22 @@ int AkinatorTree::Play()
     else if (type_play == 3)
     {
         char first_name[STR_LENGTH] = {};
-        printf("enter first object name\n");
+
+        sprintf(tmp_to_printf, "enter first object name\n");
+        print_say(tmp_to_printf);
+
         GetString(first_name);
         ObjectInfo(first_name);
     }
 
     else
-        printf("exit");
+        sprintf(tmp_to_printf, "exit");
+        print_say(tmp_to_printf);
+
         return END_OF_GAME;
-    printf("there");
+
+    sprintf(tmp_to_printf, "there");
+    print_say(tmp_to_printf);
     return OK;
 }
 
@@ -193,29 +224,36 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
 {
     if (current == nullptr)
     {
-        printf("Ok, let's go\n");
+        sprintf(tmp_to_printf, "Ok, let's go\n");
+        print_say(tmp_to_printf);
+
         current = head_node;
     }
 
     if (current->right_child == nullptr && current->left_child == nullptr)
     {
-        printf("I know it was %s? Yes?\n", current->data);
+        sprintf(tmp_to_printf, "I know it was %s? Yes?\n", current->data);
+        print_say(tmp_to_printf);
 
         char answer[STR_LENGTH] = {0};
 
         GetString(answer);
 
         if (answer[0] == 'y' || answer[0] == 'Y')
-            printf("haha\n");
-
+        {
+            sprintf(tmp_to_printf, "haha\n");
+            print_say(tmp_to_printf);
+        }
         else
         {
-            printf("Hmm, enter what about you think:\n");
+            sprintf(tmp_to_printf, "Hmm, enter what about you think:\n");
+            print_say(tmp_to_printf);
 
             char ans[STR_LENGTH] = {};
             GetString(ans);
 
-            printf("Enter differences answer, no mean my object, yes mean your's\n");
+            sprintf(tmp_to_printf, "Enter differences answer, no mean my object, yes mean your's\n");
+            print_say(tmp_to_printf);
 
             char new_q[STR_LENGTH] = {};
             GetString(new_q);
@@ -225,7 +263,9 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
     }
     else
     {
-        printf("%s end\n", current->data);
+        sprintf(tmp_to_printf, "%s end\n", current->data);
+        print_say(tmp_to_printf);
+
         char answer[STR_LENGTH] = {};
         GetString(answer);
 
@@ -347,10 +387,7 @@ int AkinatorTree::WriteDump(FILE* file, TreeNode* current)
 
 int AkinatorTree::GraphToDot()
 {
-    char input_path[STR_LENGTH] = {};
-    sprintf(input_path, "%s%s", path_to_graphviz, output_graphviz);
-
-    FILE* file_graph = fopen(input_path, "w");
+    FILE* file_graph = fopen(output_graphviz, "w");
 
     fprintf(file_graph, "digraph G{ \n");
 
@@ -362,7 +399,21 @@ int AkinatorTree::GraphToDot()
 
     char str_to_system[STR_LENGTH] = {};
 
-    sprintf(str_to_system, "cd/d %s && dot.exe -Tjpg -O %s", path_to_graphviz, output_graphviz);
+    sprintf(str_to_system, "dot -Tjpg -O %s", output_graphviz);
 
     system(str_to_system);
+}
+
+void AkinatorTree::print_say(char* str)
+{
+    printf(str);
+    char console_msg[STR_LENGTH] = {};
+
+    strcpy(console_msg, "echo \"");
+    strcpy(console_msg + strlen(console_msg), str);
+    strcpy(console_msg + strlen(console_msg), "\"| festival --tts");
+
+    system(console_msg);
+    memset(str, 0, STR_LENGTH * sizeof(char));
+
 }

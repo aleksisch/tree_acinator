@@ -21,7 +21,6 @@ int FirstWordFromText(char** ptr_on_text, char* tmp_word)
             (*ptr_on_text)++;
         }
 
-    printf("%s\n", tmp_word);
     if (counter > STR_LENGTH - 1)
         return LONG_STRING;
 

@@ -50,6 +50,10 @@ class AkinatorTree
 
     private:
 
+        void print_say(char* str);
+
+        char tmp_to_printf[STR_LENGTH] = {};        //used to generate string with sprintf
+
         int FillGraph(TreeNode* current, char** ptr_on_text);
 
         TreeNode* head_node;

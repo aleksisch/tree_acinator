@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-    printf("here");
     AkinatorTree akinator;
 
     akinator.ReadGraphFile();
