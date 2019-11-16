@@ -1,6 +1,14 @@
 { "for hunters"
 { 
+	"Is it very hard to drink?"
+{ 
+	"Vodka"
+ }
+ }
+ }
+{ 
 	"ohota krepkaya"
+ }
  }
  }
  }
@@ -31,15 +39,7 @@
  }
  }
 { 
-	"More than 40%?"
-{ 
-	"viski"
- }
- }
- }
-{ 
 	"medovooha"
- }
  }
  }
  }

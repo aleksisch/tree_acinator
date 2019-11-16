@@ -263,7 +263,7 @@ int AkinatorTree::PlayAkinator(TreeNode* current)
     }
     else
     {
-        sprintf(tmp_to_printf, "%s end\n", current->data);
+        sprintf(tmp_to_printf, "%s\n", current->data);
         print_say(tmp_to_printf);
 
         char answer[STR_LENGTH] = {};

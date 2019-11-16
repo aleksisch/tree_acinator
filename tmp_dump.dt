@@ -1,92 +1,92 @@
 digraph G{ 
-tree_node0x56534de7de70 [label = "for hunters"];
-tree_node0x56534de7e1c0 [label = "ohota krepkaya"];
+tree_node0x55bbadd97e70 [label = "for hunters"];
+tree_node0x55bbadd981c0 [label = "Is it very hard to drink?"];
 
-tree_node0x56534de7de70->tree_node0x56534de7e1c0
+tree_node0x55bbadd97e70->tree_node0x55bbadd981c0
 
-tree_node0x56534de7de70 [label = "for hunters"];
-tree_node0x56534de7e2e0 [label = "for girls"];
+tree_node0x55bbadd981c0 [label = "Is it very hard to drink?"];
+tree_node0x55bbadd99d30 [label = "Vodka"];
 
-tree_node0x56534de7de70->tree_node0x56534de7e2e0
+tree_node0x55bbadd981c0->tree_node0x55bbadd99d30
 
-tree_node0x56534de7e2e0 [label = "for girls"];
-tree_node0x56534de7e400 [label = "essa"];
+tree_node0x55bbadd981c0 [label = "Is it very hard to drink?"];
+tree_node0x55bbadd99e50 [label = "ohota krepkaya"];
 
-tree_node0x56534de7e2e0->tree_node0x56534de7e400
+tree_node0x55bbadd981c0->tree_node0x55bbadd99e50
 
-tree_node0x56534de7e2e0 [label = "for girls"];
-tree_node0x56534de7e520 [label = "for gays"];
+tree_node0x55bbadd97e70 [label = "for hunters"];
+tree_node0x55bbadd982e0 [label = "for girls"];
 
-tree_node0x56534de7e2e0->tree_node0x56534de7e520
+tree_node0x55bbadd97e70->tree_node0x55bbadd982e0
 
-tree_node0x56534de7e520 [label = "for gays"];
-tree_node0x56534de7e640 [label = "for gays from diht"];
+tree_node0x55bbadd982e0 [label = "for girls"];
+tree_node0x55bbadd98400 [label = "essa"];
 
-tree_node0x56534de7e520->tree_node0x56534de7e640
+tree_node0x55bbadd982e0->tree_node0x55bbadd98400
 
-tree_node0x56534de7e640 [label = "for gays from diht"];
-tree_node0x56534de7e760 [label = "for Lexa"];
+tree_node0x55bbadd982e0 [label = "for girls"];
+tree_node0x55bbadd98520 [label = "for gays"];
 
-tree_node0x56534de7e640->tree_node0x56534de7e760
+tree_node0x55bbadd982e0->tree_node0x55bbadd98520
 
-tree_node0x56534de7e760 [label = "for Lexa"];
-tree_node0x56534de7e880 [label = "po skidonu"];
+tree_node0x55bbadd98520 [label = "for gays"];
+tree_node0x55bbadd98640 [label = "for gays from diht"];
 
-tree_node0x56534de7e760->tree_node0x56534de7e880
+tree_node0x55bbadd98520->tree_node0x55bbadd98640
 
-tree_node0x56534de7e880 [label = "po skidonu"];
-tree_node0x56534de7e9a0 [label = "stariy melnik"];
+tree_node0x55bbadd98640 [label = "for gays from diht"];
+tree_node0x55bbadd98760 [label = "for Lexa"];
 
-tree_node0x56534de7e880->tree_node0x56534de7e9a0
+tree_node0x55bbadd98640->tree_node0x55bbadd98760
 
-tree_node0x56534de7e880 [label = "po skidonu"];
-tree_node0x56534de7eac0 [label = "bud"];
+tree_node0x55bbadd98760 [label = "for Lexa"];
+tree_node0x55bbadd98880 [label = "po skidonu"];
 
-tree_node0x56534de7e880->tree_node0x56534de7eac0
+tree_node0x55bbadd98760->tree_node0x55bbadd98880
 
-tree_node0x56534de7e760 [label = "for Lexa"];
-tree_node0x56534de7ebe0 [label = "More than 40%?"];
+tree_node0x55bbadd98880 [label = "po skidonu"];
+tree_node0x55bbadd989a0 [label = "stariy melnik"];
 
-tree_node0x56534de7e760->tree_node0x56534de7ebe0
+tree_node0x55bbadd98880->tree_node0x55bbadd989a0
 
-tree_node0x56534de7ebe0 [label = "More than 40%?"];
-tree_node0x56534de7fd30 [label = "viski"];
+tree_node0x55bbadd98880 [label = "po skidonu"];
+tree_node0x55bbadd98ac0 [label = "bud"];
 
-tree_node0x56534de7ebe0->tree_node0x56534de7fd30
+tree_node0x55bbadd98880->tree_node0x55bbadd98ac0
 
-tree_node0x56534de7ebe0 [label = "More than 40%?"];
-tree_node0x56534de7fe50 [label = "medovooha"];
+tree_node0x55bbadd98760 [label = "for Lexa"];
+tree_node0x55bbadd98be0 [label = "medovooha"];
 
-tree_node0x56534de7ebe0->tree_node0x56534de7fe50
+tree_node0x55bbadd98760->tree_node0x55bbadd98be0
 
-tree_node0x56534de7e640 [label = "for gays from diht"];
-tree_node0x56534de7ed00 [label = "garage"];
+tree_node0x55bbadd98640 [label = "for gays from diht"];
+tree_node0x55bbadd98d00 [label = "garage"];
 
-tree_node0x56534de7e640->tree_node0x56534de7ed00
+tree_node0x55bbadd98640->tree_node0x55bbadd98d00
 
-tree_node0x56534de7e520 [label = "for gays"];
-tree_node0x56534de7ee20 [label = "for bydlo"];
+tree_node0x55bbadd98520 [label = "for gays"];
+tree_node0x55bbadd98e20 [label = "for bydlo"];
 
-tree_node0x56534de7e520->tree_node0x56534de7ee20
+tree_node0x55bbadd98520->tree_node0x55bbadd98e20
 
-tree_node0x56534de7ee20 [label = "for bydlo"];
-tree_node0x56534de7ef40 [label = "klinskoe"];
+tree_node0x55bbadd98e20 [label = "for bydlo"];
+tree_node0x55bbadd98f40 [label = "klinskoe"];
 
-tree_node0x56534de7ee20->tree_node0x56534de7ef40
+tree_node0x55bbadd98e20->tree_node0x55bbadd98f40
 
-tree_node0x56534de7ee20 [label = "for bydlo"];
-tree_node0x56534de7f060 [label = "for elite people"];
+tree_node0x55bbadd98e20 [label = "for bydlo"];
+tree_node0x55bbadd99060 [label = "for elite people"];
 
-tree_node0x56534de7ee20->tree_node0x56534de7f060
+tree_node0x55bbadd98e20->tree_node0x55bbadd99060
 
-tree_node0x56534de7f060 [label = "for elite people"];
-tree_node0x56534de7f2d0 [label = "baltika 9"];
+tree_node0x55bbadd99060 [label = "for elite people"];
+tree_node0x55bbadd992d0 [label = "baltika 9"];
 
-tree_node0x56534de7f060->tree_node0x56534de7f2d0
+tree_node0x55bbadd99060->tree_node0x55bbadd992d0
 
-tree_node0x56534de7f060 [label = "for elite people"];
-tree_node0x56534de7f3f0 [label = "baltika 3"];
+tree_node0x55bbadd99060 [label = "for elite people"];
+tree_node0x55bbadd993f0 [label = "baltika 3"];
 
-tree_node0x56534de7f060->tree_node0x56534de7f3f0
+tree_node0x55bbadd99060->tree_node0x55bbadd993f0
 
 }
